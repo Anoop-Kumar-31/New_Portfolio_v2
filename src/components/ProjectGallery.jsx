@@ -32,7 +32,7 @@ const ProjectGallery = ({ images, isOpen, onClose, projectTitle }) => {
     const closeBtnTxt = isDark ? 'text-white' : 'text-slate-700';
     const titleTxt = isDark ? 'text-white' : 'text-slate-900';
     const subTxt = isDark ? 'text-slate-400' : 'text-slate-500';
-    const navBtnBg = isDark ? 'bg-slate-800/50 hover:bg-cyan-500' : 'bg-white/80 hover:bg-cyan-500 hover:text-white';
+    const navBtnBg = isDark ? 'bg-slate-800/50 hover:bg-accent' : 'bg-white/80 hover:bg-accent hover:text-white';
     const navBtnTxt = isDark ? 'text-white' : 'text-slate-700';
     const imageBg = isDark ? 'bg-slate-900 border-slate-700/50' : 'bg-white border-slate-300/60';
     const dotInactive = isDark ? 'bg-slate-600 hover:bg-slate-400' : 'bg-slate-300 hover:bg-slate-500';
@@ -125,7 +125,7 @@ const ProjectGallery = ({ images, isOpen, onClose, projectTitle }) => {
                                 onClick={(e) => { e.stopPropagation(); setCurrentIndex(idx); }}
                                 className={`h-1.5 md:h-2 rounded-full transition-all duration-300
                                     ${currentIndex === idx
-                                        ? 'bg-cyan-500 w-4 md:w-6'
+                                        ? 'bg-accent w-4 md:w-6'
                                         : `w-1.5 md:w-2 ${dotInactive}`
                                     }`}
                             />

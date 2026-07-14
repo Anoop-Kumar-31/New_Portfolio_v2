@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeContext';
 import { FaBriefcase, FaMapMarkerAlt, FaCheckCircle, FaCode } from 'react-icons/fa';
 
 const items = [
-    { icon: FaBriefcase, label: 'Experience', value: 'experience', color: 'cyan', iconColor: 'text-cyan-400', bg: 'bg-cyan-500/10' },
+    { icon: FaBriefcase, label: 'Experience', value: 'experience', color: 'cyan', iconColor: 'text-accent/80', bg: 'bg-accent/10' },
     { icon: FaCode, label: 'Stack', value: 'stack', color: 'violet', iconColor: 'text-violet-400', bg: 'bg-violet-500/10' },
     { icon: FaMapMarkerAlt, label: 'Location', value: 'location', color: 'amber', iconColor: 'text-amber-400', bg: 'bg-amber-500/10' },
     { icon: FaCheckCircle, label: 'Status', value: 'availability', color: 'emerald', iconColor: 'text-emerald-400', bg: 'bg-emerald-500/10' },
@@ -43,7 +43,7 @@ const QuickInfo = () => {
                     {quickInfo.openTo.map((type) => (
                         <span key={type}
                             className={`px-3 py-1 text-xs font-semibold rounded-full border
-                ${isDark ? 'bg-cyan-500/10 text-cyan-300 border-cyan-500/30' : 'bg-cyan-50 text-cyan-700 border-cyan-200'}`}>
+                ${isDark ? 'bg-accent/10 text-accent-300 border-accent/30' : 'bg-slate-50 text-accent-700 border-slate-200'}`}>
                             {type}
                         </span>
                     ))}

@@ -1,30 +1,32 @@
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
-const Section = ({ id, title, subtitle, children }) => {
+const Section = ({ id, label, title, subtitle, children }) => {
   const { isDark } = useTheme();
   return (
     <motion.section
       id={id}
-      className="mb-20 scroll-mt-20"
-      initial={{ opacity: 0, y: 30 }}
+      className="mb-32 scroll-mt-20"
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
+      viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6 }}
     >
-      <div className="mb-8">
-        <div className="relative flex items-center font-serif w-fit">
-          {/* Accent bar */}
-          {/* <span className="block w-1 h-8 bg-linear-to-b from-cyan-400 to-indigo-500 rounded-full shrink-0" /> */}
-          {/* /Playfair Display', Georgia, serif; */}
-          <h2 className={`text-2xl md:text-3xl font-extrabold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
-            {title}
-          </h2>
-          <div className={`w-2.5 h-2.5 absolute bg-linear-to-r from-cyan-400 to-indigo-500 rounded-full shrink-0 top-0 right-[-15px]`} />
-          {/* <div className={`grow h-px ${isDark ? 'bg-slate-700' : 'bg-slate-200'}`} /> */}
-        </div>
+      <div className="mb-16">
+        {label && (
+          <div className="flex items-center gap-2.5 mb-6">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+            <span className={`text-xs font-semibold tracking-[0.15em] uppercase ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+              {label}
+            </span>
+          </div>
+        )}
+        <h2
+          className={`text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-5 ${isDark ? 'text-white' : 'text-slate-900'}`}
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
         {subtitle && (
-          <p className={`text-xs md:text-sm font-normal ${isDark ? 'text-slate-400/50' : 'text-slate-600/50'}`}>
+          <p className={`text-base font-light max-w-xl leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
             {subtitle}
           </p>
         )}

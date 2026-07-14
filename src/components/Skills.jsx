@@ -1,90 +1,94 @@
-import { useRef, useEffect, useState } from 'react';
 import Section from './Section';
 import { skills } from '../data';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
 
-
-const CATEGORY_COLORS = [
-  'from-cyan-500 to-blue-600',
-  'from-violet-500 to-indigo-600',
-  'from-amber-500 to-orange-600',
-];
-const TEXT_COLORS = ['text-cyan-500', 'text-violet-500', 'text-amber-500'];
-
 const Skills = () => {
   const { isDark } = useTheme();
-  const cardBase = isDark ? 'bg-slate-800/40 border-slate-700/50' : 'bg-white border-slate-200';
+
+  // Flatten all tech into a single list
+  const allTech = skills.technical.flatMap(cat => cat.list);
+
+  const coreStack = [
+    'React + Redux Toolkit',
+    'Node.js + Express',
+    'PostgreSQL + Sequelize',
+    'Socket.IO + SSE',
+    'JWT Auth + RBAC',
+    'Prisma ORM',
+    'REST APIs',
+    'Git + Linux',
+  ];
 
   return (
-    <Section id="skills" title="Skills" subtitle="Technologies I work with daily">
-      <div className="grid md:grid-cols-5 gap-8">
-        {/* Technical */}
-        <div className="md:col-span-3 space-y-5">
-          {skills.technical.map((category, catIndex) => (
-            <motion.div
-              key={category.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-              className={`rounded-2xl border p-5 shadow-sm ${cardBase}`}
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className={` rounded-lg flex items-center justify-center text-xl font-black bg-linear-to-br ${CATEGORY_COLORS[catIndex]} bg-clip-text text-transparent`}>
-                  {catIndex + 1}
+    <Section
+      id="skills"
+      label="Capabilities"
+      title={`Full-stack engineering <span class="font-serif italic text-accent">that scales.</span>`}
+      subtitle="I build end-to-end digital products — from database schema to polished UI."
+    >
+      <div className="grid md:grid-cols-2 gap-8">
+        {/* Tech Icons */}
+        <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'}`}>
+          <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-6 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+            Technologies
+          </p>
+          <div className="grid grid-cols-4 sm:grid-cols-5 gap-5">
+            {allTech.map((item, i) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.04 }}
+                className="group flex flex-col items-center gap-2"
+              >
+                <div className={`w-15 h-15 rounded-xl flex items-center justify-center transition-all duration-200 group-hover:scale-110 ${isDark ? 'bg-white/5 group-hover:bg-white/10' : 'bg-slate-100 group-hover:bg-slate-100'}`}>
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className={`w-10 h-10 object-contain ${item.name === 'GitHub' && !isDark ? 'filter invert' : ''
+                      } ${['Express', 'Next.js', 'Prisma ORM', 'Socket.IO'].includes(item.name) && isDark ? 'filter invert' : ''
+                      }`}
+                  />
+                </div>
+                <span className={`text-[10px] font-semibold text-center leading-tight ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+                  {item.name}
                 </span>
-                <h4 className={`font-bold text-sm ${isDark ? 'text-white' : 'text-slate-800'}`}>{category.name}</h4>
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                {category.list.map((item) => (
-                  <div key={item.name} className="group text-center">
-                    <div className={`mx-auto mb-2 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110
-                      ${isDark ? 'bg-slate-700/60 group-hover:bg-slate-700' : 'bg-slate-100 group-hover:bg-slate-200'}`}>
-                      <img src={item.icon} alt={item.name} className={`w-7 h-7 object-contain select-none drop-shadow-sm ${isDark ? 'drop-shadow-black' : 'drop-shadow-white'} ${(item.name == "GitHub") && !isDark ? 'filter invert' : ''} ${(item.name == "Express" || item.name == "Next.js" || item.name == "Prisma ORM" || item.name == "Socket.IO") && isDark ? 'filter invert' : ''}`} />
-                    </div>
-                    <p className={`text-sm font-semibold text-shadow-xs ${isDark ? '' : 'text-shadow-gray-400'} ${TEXT_COLORS[catIndex]}`}>{item.name}</p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Soft Skills */}
-        <div className="md:col-span-2">
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className={`rounded-2xl border p-5 shadow-sm h-full ${cardBase}`}
-          >
-            <h3 className={`font-bold text-sm mb-5 ${isDark ? 'text-white' : 'text-slate-800'}`}>Soft Skills</h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.social.map((skill) => (
-                <motion.span
-                  key={skill}
-                  whileHover={{ scale: 1.05 }}
-                  className={`px-3 py-2 rounded-xl text-xs font-semibold border transition-all duration-200 cursor-default
-                    ${isDark ? 'bg-slate-700/50 text-slate-300 border-slate-600 hover:border-cyan-400 hover:text-cyan-300' : 'bg-slate-100 text-slate-600 border-slate-200 hover:border-cyan-400 hover:text-cyan-600'}`}
-                >
-                  {skill}
-                </motion.span>
-              ))}
-            </div>
-
-            {/* Stack summary */}
-            <div className={`mt-6 pt-5 border-t ${isDark ? 'border-slate-700' : 'border-slate-200'}`}>
-              <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Core Stack</p>
-              {['React + Redux', 'Node.js + Express', 'PostgreSQL + Sequelize', 'JWT Auth + RBAC', 'REST APIs + SSE', 'WebSockets (Socket.IO)', 'Event-Driven Architecture'].map((s) => (
-                <div key={s} className="flex items-center gap-2 mb-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0" />
+        {/* Core Stack + Soft Skills */}
+        <div className="flex flex-col gap-6">
+          <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'}`}>
+            <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-5 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+              Core Stack
+            </p>
+            <div className="space-y-2.5">
+              {coreStack.map(s => (
+                <div key={s} className="flex items-center gap-3">
+                  <span className="w-1 h-1 rounded-full bg-accent shrink-0" />
                   <span className={`text-sm font-medium ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>{s}</span>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
+
+          <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'}`}>
+            <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+              Approach
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {skills.social.map(s => (
+                <span key={s} className={`text-xs font-medium px-3 py-1.5 rounded-full border ${isDark ? 'border-white/10 text-slate-400' : 'border-slate-200 text-slate-500'
+                  }`}>
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </Section>

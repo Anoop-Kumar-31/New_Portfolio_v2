@@ -5,20 +5,20 @@ import { hireReadiness } from '../data';
 import { useTheme } from '../context/ThemeContext';
 
 const CARD_GRADIENTS = [
-    'from-cyan-500/10 to-blue-500/5 border-cyan-500/20 hover:border-cyan-400/50',
+    'from-accent/10 to-blue-500/5 border-accent/20 hover:border-accent/80/50',
     'from-violet-500/10 to-indigo-500/5 border-violet-500/20 hover:border-violet-400/50',
     'from-amber-500/10 to-orange-500/5 border-amber-500/20 hover:border-amber-400/50',
     'from-emerald-500/10 to-teal-500/5 border-emerald-500/20 hover:border-emerald-400/50',
     'from-pink-500/10 to-rose-500/5 border-pink-500/20 hover:border-pink-400/50',
-    'from-sky-500/10 to-cyan-500/5 border-sky-500/20 hover:border-sky-400/50',
+    'from-sky-500/10 to-accent/5 border-sky-500/20 hover:border-sky-400/50',
 ];
 const CARD_GRADIENTS_LIGHT = [
-    'from-cyan-50 to-blue-50 border-cyan-200 hover:border-cyan-400',
+    'from-slate-50 to-blue-50 border-slate-200 hover:border-accent/80',
     'from-violet-50 to-indigo-50 border-violet-200 hover:border-violet-400',
     'from-amber-50 to-orange-50 border-amber-200 hover:border-amber-400',
     'from-emerald-50 to-teal-50 border-emerald-200 hover:border-emerald-400',
     'from-pink-50 to-rose-50 border-pink-200 hover:border-pink-400',
-    'from-sky-50 to-cyan-50 border-sky-200 hover:border-sky-400',
+    'from-sky-50 to-slate-50 border-sky-200 hover:border-sky-400',
 ];
 
 const CapabilityCard = ({ capability, index }) => {
@@ -55,7 +55,12 @@ const CapabilityCard = ({ capability, index }) => {
 const HireReadiness = () => {
     const { isDark } = useTheme();
     return (
-        <Section id="hire-readiness" title={hireReadiness.title} subtitle="Skills I can apply from day one">
+        <Section 
+            id="hire-readiness" 
+            label="The Advantage" 
+            title={`Create products <br /><span class="font-serif italic text-accent">with purpose.</span>`} 
+            subtitle="Three reasons why founders and teams partner with me to turn complex ideas into high-performing digital realities."
+        >
             {/* Available badge */}
             <div className="flex items-center gap-2 mb-6">
                 <span className="relative flex h-3 w-3">
@@ -86,7 +91,7 @@ const HireReadiness = () => {
                         href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:shadow-cyan-500/50 transition-all duration-300"
+                        className="bg-gradient-to-r from-accent to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:shadow-accent/50 transition-all duration-300"
                     >
                         Let's Talk
                     </motion.a>
@@ -95,7 +100,7 @@ const HireReadiness = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         className={`font-bold py-3 px-8 rounded-full border transition-all duration-300
-              ${isDark ? 'border-slate-600 text-slate-300 hover:border-cyan-400 hover:text-cyan-400' : 'border-slate-300 text-slate-600 hover:border-cyan-500 hover:text-cyan-600'}`}
+              ${isDark ? 'border-slate-600 text-slate-300 hover:border-accent/80 hover:text-accent/80' : 'border-slate-300 text-slate-600 hover:border-accent hover:text-accent'}`}
                     >
                         View My Work
                     </motion.a>
