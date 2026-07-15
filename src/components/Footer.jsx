@@ -38,12 +38,11 @@ const Footer = () => {
       </section>
 
       {/* Footer bar */}
-      <footer className={`border-t py-8 px-6 transition-colors duration-300 ${
-        isDark ? 'border-white/5 bg-[#111316]' : 'border-slate-200 bg-[#F7F6F2]'
-      }`}>
+      <footer className={`border-t py-8 px-6 transition-colors duration-300 ${isDark ? 'border-white/5 bg-[#111316]' : 'border-slate-200 bg-[#F7F6F2]'
+        }`}>
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <span className={`text-sm font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>AK</span>
+            <span className={`text-sm font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}><span className='text-accent'>A</span>K</span>
             <span className={`text-sm ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
               · {personalInfo.name} · {new Date().getFullYear()}
             </span>

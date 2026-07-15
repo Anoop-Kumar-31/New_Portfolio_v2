@@ -47,8 +47,8 @@ const Skills = () => {
                   <img
                     src={item.icon}
                     alt={item.name}
-                    className={`w-10 h-10 object-contain ${item.name === 'GitHub' && !isDark ? 'filter invert' : ''
-                      } ${['Express', 'Next.js', 'Prisma ORM', 'Socket.IO'].includes(item.name) && isDark ? 'filter invert' : ''
+                    className={`w-10 h-10 object-contain ${item.name === 'GitHub' && isDark ? 'filter invert' : ''
+                      } ${['Express.js', 'Next.js', 'Prisma', 'Socket.IO', 'Docker'].includes(item.name) && isDark ? 'filter invert' : ''
                       }`}
                   />
                 </div>

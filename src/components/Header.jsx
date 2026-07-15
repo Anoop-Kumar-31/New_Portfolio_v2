@@ -25,9 +25,9 @@ const Header = () => {
       <nav className={`sticky top-0 z-[1000] backdrop-blur-md ${navBg} transition-colors duration-300`}>
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#me" className="flex items-center gap-2">
-            <span className={`text-3xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
-              <span className='text-accent'>A</span>K
+          <a href="#me" className="font-serif italic flex items-center gap-2">
+            <span className={`text-2xl font-bold tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
+              <span className='text-accent'>Anoop</span>{" "}Kumar
             </span>
           </a>
 
@@ -37,7 +37,7 @@ const Header = () => {
               <a
                 key={label}
                 href={href}
-                className={`text-sm font-medium transition-colors duration-200
+                className={`relative overflow-hidden pb-1 text-sm font-medium transition-colors duration-200 before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-[2px] before:bg-accent before:transition-transform before:duration-300 before:-translate-x-full hover:before:translate-x-0
                   ${isDark ? 'text-slate-400 hover:text-white' : 'text-slate-500 hover:text-slate-900'}`}
               >
                 {label}

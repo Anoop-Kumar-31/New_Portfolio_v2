@@ -27,17 +27,51 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease, filter 0.25s ease-in-out;
+  filter: blur(0px);
+}
+
+body.theme-transitioning {
+  filter: blur(12px);
+  pointer-events: none;
 }
 
 body.dark {
   background-color: var(--bg-dark);
   color: #E8E3DC;
+  --grid-base: rgba(200, 106, 44, 0.05);
+  --grid-highlight: rgba(200, 106, 44, 0.14);
 }
 
 body.light {
   background-color: var(--bg-light);
   color: #1A1A1A;
+  --grid-base: rgba(200, 106, 44, 0.03);
+  --grid-highlight: rgba(200, 106, 44, 0.08);
+}
+
+.base-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-base) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-base) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.highlight-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--grid-highlight) 38px, transparent 38px),
+    linear-gradient(to bottom, var(--grid-highlight) 38px, transparent 38px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(circle 75px at var(--mouse-x, -1000px) var(--mouse-y, -1000px), black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle 75px at var(--mouse-x, -1000px) var(--mouse-y, -1000px), black 20%, transparent 80%);
 }
 
 /* Animations */

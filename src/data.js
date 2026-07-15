@@ -1,6 +1,6 @@
 import amazon from "./img/amazonclone.png";
 import autoback from "./img/autoback.png";
-import MyImage from "./img/MyImage.png";
+import MyImage from "./img/MyImage01.png";
 import tas from "./img/icons/Techasoft.png";
 import { FiShield, FiZap, FiDatabase, FiPieChart, FiKey, FiServer } from "react-icons/fi";
 
@@ -26,240 +26,71 @@ export const workExperience = [
     role: "Software Developer Intern",
     period: "May 2025 – Nov 2025",
 
-    "Backend Development": [
-      "Built scalable REST APIs using Node.js (Express) and Django.",
-      "Assisted in designing relational database schemas and Sequelize ORM models.",
-      "Implemented JWT authentication with role-based access control.",
-      "Handled transactions and associations for complex database operations.",
-      "Contributed to modular backend architecture following team guidelines.",
-      "Developed APIs supporting multi-portal restaurant management workflows.",
+    "Full-Stack Development": [
+      "Built REST APIs using Node.js, Express.js, and Django, with Sequelize-based relational data models.",
+      "Developed role-based React portals for Admin, Vendor, and Customer workflows using Redux Toolkit.",
+      "Delivered end-to-end features across frontend, backend, authentication, and database layers.",
     ],
 
-    "Frontend Development": [
-      "Developed three role-based React portals (Admin, Vendor, Customer).",
-      "Managed application state using Redux Toolkit.",
-      "Built responsive dashboards and reusable UI component libraries.",
-      "Integrated Server-Sent Events (SSE) for real-time updates.",
-      "Implemented dynamic forms, tables, and data-driven UI components.",
-      "Improved user experience with optimized API integration patterns.",
+    "Real-Time & Performance": [
+      "Integrated Server-Sent Events (SSE) for real-time application updates.",
+      "Improved backend performance through Redis caching, query optimization, and database indexing.",
+      "Implemented JWT authentication, RBAC, and automated email workflows using Nodemailer.",
     ],
 
-    "DevOps & Collaboration": [
-      "Collaborated using Git-based workflows in Linux development environments.",
-      "Configured backend services and environment variables for deployment.",
-      "Improved API performance using Redis caching strategies.",
-      "Optimized database queries and indexing for faster responses.",
-      "Documented APIs and backend modules for developer onboarding.",
-      "Worked closely with designers and developers to deliver production features.",
-    ],
-
-    "Key Achievements": [
-      "Contributed to a multi-portal platform used by restaurants and customers.",
-      "Refactored legacy modules to improve code structure and maintainability.",
-      "Developed automated email notifications using Nodemailer templates.",
-      "Delivered end-to-end features across backend APIs and frontend dashboards.",
-      "Supported onboarding workflows and restaurant management operations.",
+    "Engineering & Collaboration": [
+      "Built reusable UI components and refactored legacy modules for better maintainability.",
+      "Worked with Git-based workflows and Linux environments in a collaborative development team.",
+      "Documented APIs and backend modules to support development and onboarding.",
     ],
   },
 ];
 
 export const projects = [
   {
-    id: 1,
-    title: "Blood Donor & Patient Management System",
-    businessContext: "Healthcare platform connecting blood donors with patients in need",
-    period: "May 2023 – Aug 2023",
-    description: "Full-stack platform connecting donors and patients. Upgraded with clean MVC backend architecture, integration of 2,800+ real government blood banks (data.gov.in), secure OTP verification, and a responsive Tailwind UI.",
-    problemSolutionImpact: {
-      problem: "Lack of centralized real-time information for blood availability and authenticated donors",
-      solution: "Built a scalable automated platform with real-time geographical donor matching, secure email OTP auth, and 2,800+ searchable government blood banks",
-      impact: "Reduces search time for blood donors by centralizing verified government blood bank data and authenticated donor information"
-    },
-    techStack: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "Mongoose ODM", "REST APIs", "Nodemailer", "MVC Architecture", "OTP Authentication", "Cross-Origin Resource Sharing"],
-    link: "https://blood-management-system-frontend-rosy.vercel.app/",
-    githubRepo: {
-      frontend: "https://github.com/Anoop-Kumar-31/Blood_Management_System_Frontend",
-      backend: "https://github.com/Anoop-Kumar-31/Blood_Management_System_Backend"
-    },
-    project_img: "/img/gallery/BloodManagementSystem/heartbeat.png",
-    category: "Full-Stack",
-    startDate: "2023-05",
-    gallery: [
-      "/img/gallery/BloodManagementSystem/HomePage.png",
-      "/img/gallery/BloodManagementSystem/EmailVerification.png",
-      "/img/gallery/BloodManagementSystem/OTPEmail.png",
-      "/img/gallery/BloodManagementSystem/BloodBank.png",
-    ],
-    isFeatured: true,
-  },
-  {
-    id: 2,
-    title: "Amazon Clone",
-    businessContext: "E-commerce platform for online shopping with cart and account creation",
-    period: "June 2024 – Nov 2024",
-    description: "Full-featured e-commerce marketplace built with Next.js, Firebase authentication, and MongoDB. Includes product browsing, cart management, and secure checkout flow.",
-    problemSolutionImpact: {
-      problem: "Small businesses need affordable e-commerce solutions to sell products online",
-      solution: "Built scalable marketplace with secure authentication, real-time cart, and payment integration",
-      impact: "Demonstrates core e-commerce functionality including product browsing, cart management, and user authentication"
-    },
-    techStack: ["Next.js", "Firebase Authentication", "Tailwind CSS", "Vercel"],
-    link: "https://anoopsamazon.vercel.app/",
-    githubRepo: "https://github.com/Anoop-Kumar-31/myamazonclone",
-    project_img: amazon,
-    category: "Frontend",
-    startDate: "2024-06",
-    gallery: [
-      "/img/gallery/AmazonClone/Home.png",
-      "/img/gallery/AmazonClone/Cart.png",
-      "/img/gallery/AmazonClone/Signin.png",
-    ],
-  },
-  {
-    id: 3,
-    title: "AutoBack Website",
-    businessContext: "Corporate website for AI/ML service provider showcasing solutions and capabilities",
-    period: "Feb 2024 – Apr 2024",
-    description: "Custom-designed corporate website for an AI/ML service provider with modern UI, service showcases, and lead generation forms.",
-    problemSolutionImpact: {
-      problem: "AI/ML company needed professional web presence to establish market credibility",
-      solution: "Designed and developed unique, modern website showcasing services and technical capabilities",
-      impact: "Created professional brand presence with service showcases and lead generation forms"
-    },
-    techStack: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
-    link: "https://autoback-7van.onrender.com/",
-    githubRepo: "https://github.com/Anoop-Kumar-31/AutoBack2_0",
-    project_img: autoback,
-    category: "Frontend",
-    startDate: "2024-02",
-    gallery: [
-      "/img/gallery/AutoBack/AutoBackHero.png",
-      "/img/gallery/AutoBack/AutoBackService.png",
-      "/img/gallery/AutoBack/AutoBackClients.png",
-      "/img/gallery/AutoBack/AutoBackTech.png",
-      "/img/gallery/AutoBack/AutoBackBusiness.png",
-      "/img/gallery/AutoBack/AutoBackWorks.png",
-      "/img/gallery/AutoBack/AutoBackAboutAndContact.png",
-    ],
-  }, {
     id: 4,
-    title: "The Secrets of CHIAROSCURO — Official Novel Website",
-    businessContext: "Personal branding and interactive storytelling platform for a supernatural fantasy novel",
-    period: "Dec 2025 – Jan 2026",
-    description: "Custom-built promotional website for my Wattpad novel 'The Secrets of CHIAROSCURO'. Designed to enhance reader engagement with story exploration, anonymous reviews, and immersive UI experience.",
-    problemSolutionImpact: {
-      problem: "Web Novels Series often lack personalized branding and reader interaction outside the platform",
-      solution: "Built a dedicated novel website to centralize story information, enable anonymous reviews, and strengthen reader engagement",
-      impact: "Centralizes story information and enables reader interaction through anonymous reviews"
-    },
-    techStack: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Responsive Design",
-      "Deployment (Vercel)"
-    ],
-    link: "https://secrets-of-chiaroscuro.vercel.app/",
-    githubRepo: "https://github.com/Anoop-Kumar-31/Secrets_of_Chiaroscuro",
-    project_img: "/img/gallery/NovelWebsite/tsocnovel.png",
-    category: "Frontend",
-    startDate: "2025-12",
-    gallery: [
-      "/img/gallery/NovelWebsite/herosection.png",
-      "/img/gallery/NovelWebsite/about.png",
-      "/img/gallery/NovelWebsite/char1.png",
-      "/img/gallery/NovelWebsite/char2.png",
-      "/img/gallery/NovelWebsite/char3.png",
-      "/img/gallery/NovelWebsite/char4.png",
-      "/img/gallery/NovelWebsite/lore.png",
-      "/img/gallery/NovelWebsite/Feedbackandfooter.png",
-    ],
-  },
-  {
-    id: 5,
-    title: "RBAC Analytics Dashboard",
-    businessContext: "Multi-role analytics and operations management platform for restaurant environments",
-    period: "Jan 2026 – Feb 2026",
-    description: "Full-stack RBAC system with secure authentication, financial dashboards, and strict API-level role enforcement. Designed with clean layered architecture and deployed using Supabase and Render.",
-    problemSolutionImpact: {
-      problem: "Lack of structured role-based access and centralized financial tracking in multi-level restaurant operations",
-      solution: "Engineered a secure, role-driven analytics platform with JWT authentication, middleware-based authorization, and data-driven dashboards",
-      impact: "Provides role-specific dashboards for Admin, Manager, and Staff with API-level access control"
-    },
-    techStack: [
-      "React",
-      "Tailwind CSS",
-      "Redux Toolkit",
-      "Node.js",
-      "Express",
-      "JWT Authentication",
-      "Middleware-based Authorization",
-      "Sequelize",
-      "PostgreSQL",
-      "Supabase",
-      "MVC Architecture",
-      "Cross-Origin Resource Sharing",
-    ],
-    link: "https://role-based-analytics-dashboard.vercel.app/",
-    githubRepo: {
-      backend: "https://github.com/Anoop-Kumar-31/Role-Based-Analytics-Dashboard_Backend",
-      frontend: "https://github.com/Anoop-Kumar-31/Role-Based-Analytics-Dashboard"
-    },
-    project_img: "/img/gallery/RBAC Analytics Dashboard/RBACAnalyticalDashboard.png",
-    category: "Full-Stack",
-    startDate: "2026-01",
-    gallery: [
-      "/img/gallery/RBAC Analytics Dashboard/signin.png",
-      "/img/gallery/RBAC Analytics Dashboard/dashboard.png",
-      "/img/gallery/RBAC Analytics Dashboard/onboarding.png",
-      "/img/gallery/RBAC Analytics Dashboard/onboarded.png",
-      "/img/gallery/RBAC Analytics Dashboard/user.png",
-      "/img/gallery/RBAC Analytics Dashboard/revenue.png",
-      "/img/gallery/RBAC Analytics Dashboard/expense.png",
-      "/img/gallery/RBAC Analytics Dashboard/Bluebook.png",
-      "/img/gallery/RBAC Analytics Dashboard/users.png",
-      "/img/gallery/RBAC Analytics Dashboard/location.png",
-    ],
-    isFeatured: true,
-  },
-  {
-    id: 6,
-    title: "QueueFlow",
-    businessContext: "Real-Time Developer Workflow Intelligence Platform for managing developer workflows with intelligence insights.",
+    title: "QueueFlow — Real-Time Workflow Intelligence Platform",
+    businessContext:
+      "Real-time developer workflow and project collaboration platform",
+
     period: "Feb 2026 – Present",
+
     description:
-      "A production-grade real-time collaboration platform that manages developer workflows using time-ordered queues, event-driven architecture, and WebSocket-based synchronization. Built with a workflow intelligence layer to detect bottlenecks, workload imbalance, and task delays in real time.",
+      "Production-grade collaboration platform combining real-time task synchronization, developer queues, workflow analytics, and client visibility in one system.",
 
     problemSolutionImpact: {
       problem:
-        "Traditional tools like Jira and Trello suffer from stale state, lack real-time collaboration, and provide limited insight into workflow inefficiencies.",
+        "Project teams often rely on fragmented task updates, delayed status reporting, and limited visibility into bottlenecks and workload distribution.",
+
       solution:
-        "Designed an event-driven system using WebSockets to provide real-time synchronization, developer queue management, and intelligent workflow insights.",
+        "Engineered an event-driven platform with WebSocket synchronization, time-ordered task queues, role-based access, and workflow analytics for live project coordination.",
+
       impact:
-        "Enables teams to detect bottlenecks, balance workloads, and improve productivity with live updates and actionable insights. Allows Clients to track the progress of their projects in real time and leave notes on the tasks."
+        "Gives teams real-time visibility into task progress, bottlenecks, and workload distribution while enabling clients to track projects and leave contextual notes."
     },
+
     techStack: [
       "React",
       "Redux Toolkit",
       "Tailwind CSS",
       "Node.js",
-      "Express",
-      "Socket.IO",
+      "Express.js",
       "PostgreSQL",
       "Prisma ORM",
+      "Socket.IO",
+      "WebSockets",
       "JWT Authentication",
-      "Event-Driven Architecture",
-      "WebSocket Real-Time Sync",
+      "Event-Driven Architecture"
     ],
+
     link: "https://queue-flow-rho.vercel.app/",
-    githubRepo: {
-      frontend: "https://github.com/Anoop-Kumar-31/QueueFlow_Frontend",
-      backend: "https://github.com/Anoop-Kumar-31/QueueFlow_Backend"
-    },
+    githubRepo:
+      "https://github.com/Anoop-Kumar-31/QueueFlow-Real-Time-Task-Queue-Team-Collaboration-Platform",
+
     project_img: "/img/gallery/QueueFlow/ququeflow.png",
     category: "Full-Stack",
     startDate: "2026-02",
+
     gallery: [
       "/img/gallery/QueueFlow/Login.png",
       "/img/gallery/QueueFlow/SignUp.png",
@@ -271,9 +102,183 @@ export const projects = [
       "/img/gallery/QueueFlow/CodeTimeLimit.png",
       "/img/gallery/QueueFlow/CodeGenerated.png",
       "/img/gallery/QueueFlow/JoinWithProjectCode.png",
-      "/img/gallery/QueueFlow/ManageAccess(PM).png",
+      "/img/gallery/QueueFlow/ManageAccess(PM).png"
     ],
-    isFeatured: true,
+
+    isFeatured: true
+  },
+
+  {
+    id: 3,
+    title: "NEXORA — Multi-Role Operations & Analytics Platform",
+    businessContext:
+      "Role-based restaurant operations and financial analytics platform",
+
+    period: "Jan 2026 – Feb 2026",
+
+    description:
+      "Full-stack operations platform with secure role-based access, financial analytics, multi-location management, and API-level authorization.",
+
+    problemSolutionImpact: {
+      problem:
+        "Multi-location operations require different access levels for administrators, managers, and staff while keeping financial and operational data centralized.",
+
+      solution:
+        "Built a role-driven platform with JWT authentication, middleware-based authorization, protected APIs, and dedicated dashboards for each operational role.",
+
+      impact:
+        "Centralizes revenue, expenses, users, and locations while ensuring each role can access only the data and actions relevant to its responsibilities."
+    },
+
+    techStack: [
+      "React",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Sequelize",
+      "JWT Authentication",
+      "RBAC",
+      "REST APIs",
+      "MVC Architecture"
+    ],
+
+    link: "https://role-based-analytics-dashboard.vercel.app/",
+    githubRepo:
+      "https://github.com/Anoop-Kumar-31/NEXORA-Multi-Tenant-Role-Based-Company-Restaurants-Management-Analytics-Platform",
+
+    project_img:
+      "/img/gallery/RBAC Analytics Dashboard/RBACAnalyticalDashboard.png",
+
+    category: "Full-Stack",
+    startDate: "2026-01",
+
+    gallery: [
+      "/img/gallery/RBAC Analytics Dashboard/signin.png",
+      "/img/gallery/RBAC Analytics Dashboard/dashboard.png",
+      "/img/gallery/RBAC Analytics Dashboard/onboarding.png",
+      "/img/gallery/RBAC Analytics Dashboard/onboarded.png",
+      "/img/gallery/RBAC Analytics Dashboard/user.png",
+      "/img/gallery/RBAC Analytics Dashboard/revenue.png",
+      "/img/gallery/RBAC Analytics Dashboard/expense.png",
+      "/img/gallery/RBAC Analytics Dashboard/Bluebook.png",
+      "/img/gallery/RBAC Analytics Dashboard/users.png",
+      "/img/gallery/RBAC Analytics Dashboard/location.png"
+    ],
+
+    isFeatured: true
+  },
+
+  {
+    id: 1,
+    title: "HeartBeat — Blood Donor & Blood Bank Platform",
+    businessContext:
+      "Healthcare platform for blood banks and connecting donors with patients",
+
+    period: "May 2023 – Aug 2023",
+
+    description:
+      "Full-stack blood assistance platform combining authenticated donor information with 2,800+ searchable government blood bank records from data.gov.in.",
+
+    problemSolutionImpact: {
+      problem:
+        "People searching for blood often face fragmented donor information and difficulty discovering relevant blood banks from a single platform.",
+
+      solution:
+        "Built a centralized platform with geographic donor discovery, email OTP verification, and integration of 2,800+ real government blood bank records.",
+
+      impact:
+        "Brings donor discovery and verified public blood bank data into one searchable experience, reducing the effort required to find relevant blood resources."
+    },
+
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Mongoose",
+      "REST APIs",
+      "Nodemailer",
+      "OTP Authentication",
+      "MVC Architecture"
+    ],
+
+    link:
+      "https://blood-management-system-frontend-rosy.vercel.app/",
+
+    githubRepo:
+      "https://github.com/Anoop-Kumar-31/HeartBeat-Connecting-Donors-Saving-Lives-and-Finding-Blood-Banks",
+
+    project_img:
+      "/img/gallery/BloodManagementSystem/heartbeat.png",
+
+    category: "Full-Stack",
+    startDate: "2023-05",
+
+    gallery: [
+      "/img/gallery/BloodManagementSystem/HomePage.png",
+      "/img/gallery/BloodManagementSystem/EmailVerification.png",
+      "/img/gallery/BloodManagementSystem/OTPEmail.png",
+      "/img/gallery/BloodManagementSystem/BloodBank.png"
+    ],
+
+    isFeatured: true
+  },
+
+  {
+    id: 2,
+    title: "The Secrets of CHIAROSCURO — Novel Experience",
+    businessContext:
+      "Immersive digital experience and reader engagement platform for an original fantasy novel",
+
+    period: "Dec 2025 – Jan 2026",
+
+    description:
+      "Custom-built interactive website that transforms an original novel into an immersive digital experience with character exploration, world-building, and anonymous reader feedback.",
+
+    problemSolutionImpact: {
+      problem:
+        "Publishing platforms provide limited control over visual identity, world-building presentation, and direct reader interaction.",
+
+      solution:
+        "Designed a dedicated story experience that brings characters, lore, and reader feedback together through responsive UI and motion-driven storytelling.",
+
+      impact:
+        "Creates a distinct digital identity for the novel and gives readers a centralized way to explore its world and share feedback."
+    },
+
+    techStack: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Responsive Design"
+    ],
+
+    link:
+      "https://secrets-of-chiaroscuro.vercel.app/",
+
+    githubRepo:
+      "https://github.com/Anoop-Kumar-31/Secrets_of_Chiaroscuro",
+
+    project_img:
+      "/img/gallery/NovelWebsite/tsocnovel.png",
+
+    category: "Frontend",
+    startDate: "2025-12",
+
+    gallery: [
+      "/img/gallery/NovelWebsite/herosection.png",
+      "/img/gallery/NovelWebsite/about.png",
+      "/img/gallery/NovelWebsite/char1.png",
+      "/img/gallery/NovelWebsite/char2.png",
+      "/img/gallery/NovelWebsite/char3.png",
+      "/img/gallery/NovelWebsite/char4.png",
+      "/img/gallery/NovelWebsite/lore.png",
+      "/img/gallery/NovelWebsite/Feedbackandfooter.png"
+    ]
   }
 ];
 
@@ -282,39 +287,129 @@ export const skills = {
     {
       name: "Languages",
       list: [
-        { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-        { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-        { name: "ES6", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-      ]
-    },
-    {
-      name: "Frameworks & Libraries",
-      list: [
-        { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-        { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-        { name: "Express", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+        {
+          name: "JavaScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        },
+        {
+          name: "TypeScript",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        },
+        {
+          name: "Python",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        },
       ],
     },
     {
-      name: "Databases & Tools",
+      name: "Frontend",
       list: [
-        { name: "SQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-        { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-        { name: "GitHub", icon: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png" },
-        { name: "Sequelize", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg" },
-        { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-        { name: "Prisma ORM", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" },
-        { name: "Socket.IO", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg" },
+        {
+          name: "HTML5",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        },
+        {
+          name: "CSS3",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        },
+        {
+          name: "React",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        },
+        {
+          name: "Next.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+        },
+        {
+          name: "Tailwind CSS",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+        },
+        {
+          name: "Redux",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+        },
+      ],
+    },
+    {
+      name: "Backend & APIs",
+      list: [
+        {
+          name: "Node.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        },
+        {
+          name: "Express.js",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+        },
+        {
+          name: "REST APIs",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+        },
+        {
+          name: "Socket.IO",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/socketio/socketio-original.svg",
+        },
+      ],
+    },
+    {
+      name: "Databases & ORM",
+      list: [
+        {
+          name: "PostgreSQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+        },
+        {
+          name: "MySQL",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        },
+        {
+          name: "MongoDB",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        },
+        {
+          name: "Redis",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+        },
+        {
+          name: "Prisma",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+        },
+        {
+          name: "Sequelize",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original.svg",
+        },
+      ],
+    },
+    {
+      name: "Tools & Platforms",
+      list: [
+        {
+          name: "Git",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        },
+        {
+          name: "GitHub",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+        },
+        {
+          name: "Docker",
+          icon: "https://cdn.jsdelivr.net/npm/simple-icons@3.13.0/icons/docker.svg",
+        },
+        {
+          name: "Figma",
+          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+        },
       ],
     },
   ],
+
   social: [
-    "Empathy & Collaboration",
-    "Initiative & Active Listening",
-    "Cohesive Visionary Engagement",
-    "Inspiration & Long-Term Vision",
+    "Problem Solving",
+    "Clean & Maintainable Code",
+    "User-Centered Development",
+    "Collaboration & Communication",
+    "Continuous Learning",
+    "Ownership & Initiative",
   ],
 };
 

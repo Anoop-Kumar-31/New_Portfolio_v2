@@ -36,24 +36,53 @@ function AppContent() {
   }, [isDark]);
 
   useEffect(() => {
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.pageX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.pageY}px`);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => setShowTop(window.scrollY > 600);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className={`${isDark ? 'text-slate-300' : 'text-slate-700'} antialiased transition-colors duration-300`}>
-      <Header />
+    <div className={`${isDark ? 'text-slate-300' : 'text-slate-700'} antialiased transition-colors duration-300 relative min-h-screen overflow-x-hidden`}>
+      {/* Subtle dynamic background */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Base structural grid */}
+        <div className="base-grid" />
 
-      <main className="max-w-6xl mx-auto px-6 pt-8">
-        <Experience />
-        <Projects />
-        <Skills />
-        <Education />
-        <Contact />
-      </main>
+        {/* Cursor interactive grid highlight */}
+        <div className="highlight-grid" />
 
-      <Footer />
+        {/* Ambient drift blob 1 */}
+        <div className={`absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] rounded-full filter blur-[120px] animate-drift bg-accent/5 ${isDark ? 'opacity-40' : 'opacity-25'
+          }`} />
+
+        {/* Ambient drift blob 2 */}
+        <div className={`absolute -bottom-[10%] -right-[10%] w-[50vw] h-[50vw] rounded-full filter blur-[120px] animate-drift-reverse bg-accent/5 ${isDark ? 'opacity-30' : 'opacity-15'
+          }`} />
+      </div>
+
+      {/* Main content container */}
+      <div className="relative z-10">
+        <Header />
+
+        <main className="max-w-6xl mx-auto px-6 pt-8">
+          <Experience />
+          <Projects />
+          <Skills />
+          <Education />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
 
       {/* Scroll to top */}
       {showTop && (
