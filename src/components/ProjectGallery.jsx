@@ -44,7 +44,7 @@ const ProjectGallery = ({ images, isOpen, onClose, projectTitle }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                className={`fixed inset-0 z-100000 flex items-center justify-center backdrop-blur-xl p-4 md:p-8 h-screen w-screen overflow-hidden ${overlayBg}`}
+                className={`fixed inset-0 z-10000000000 flex items-center justify-center backdrop-blur-xl p-4 md:p-8 h-screen w-screen overflow-hidden ${overlayBg}`}
                 onClick={handleClose}
             >
                 {/* Close Button */}

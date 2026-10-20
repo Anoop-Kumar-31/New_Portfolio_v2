@@ -22,7 +22,9 @@ const Header = () => {
 
   return (
     <>
-      <nav className={`sticky top-0 z-[1000] backdrop-blur-md ${navBg} transition-colors duration-300`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 w-full z-[1000] backdrop-blur-md ${navBg} transition-colors duration-300`}
+      >
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#me" className="font-serif italic flex items-center gap-2">
@@ -103,7 +105,10 @@ const Header = () => {
       </nav>
 
       {/* Hero */}
-      <header id="me" className="max-w-6xl mx-auto px-6 pb-20 scroll-mt-16">
+      <header
+        id="me"
+        className="max-w-6xl mx-auto px-6 pt-10 pb-20 scroll-mt-10"
+      >
         <div className="grid md:grid-cols-2 gap-0 items-center">
 
           {/* Left: Text */}
@@ -171,11 +176,11 @@ const Header = () => {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="relative order-first md:order-last"
           >
-            <div className={`relative overflow-hidden rounded-3xl aspect-[4/5]`}>
+            <div className={`relative overflow-hidden rounded-3xl aspect-[4/5] flex justify-center items-center`}>
               <img
                 src={personalInfo.MyImage.src}
                 alt={personalInfo.MyImage.alt || personalInfo.name}
-                className="h-fit object-cover object-top"
+                className="h-[85%] object-cover object-top"
               />
             </div>
           </motion.div>

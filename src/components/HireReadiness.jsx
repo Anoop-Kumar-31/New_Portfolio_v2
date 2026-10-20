@@ -55,10 +55,10 @@ const CapabilityCard = ({ capability, index }) => {
 const HireReadiness = () => {
     const { isDark } = useTheme();
     return (
-        <Section 
-            id="hire-readiness" 
-            label="The Advantage" 
-            title={`Create products <br /><span class="font-serif italic text-accent">with purpose.</span>`} 
+        <Section
+            id="hire-readiness"
+            label="The Advantage"
+            title={`Create products <br /><span class="font-serif italic text-accent">with purpose.</span>`}
             subtitle="Three reasons why founders and teams partner with me to turn complex ideas into high-performing digital realities."
         >
             {/* Available badge */}
@@ -91,7 +91,7 @@ const HireReadiness = () => {
                         href="#contact"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="bg-gradient-to-r from-accent to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:shadow-accent/50 transition-all duration-300"
+                        className="bg-linear-to-r from-accent to-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-[0_2px_5px_rgba(0,0,0,0.5)] hover:shadow-accent/50 transition-all duration-300"
                     >
                         Let's Talk
                     </motion.a>

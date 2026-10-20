@@ -1,13 +1,22 @@
+import { useState, useMemo } from 'react';
 import Section from './Section';
 import { skills } from '../data';
 import { useTheme } from '../context/ThemeContext';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Skills = () => {
   const { isDark } = useTheme();
+  const [activeCategory, setActiveCategory] = useState('All');
 
-  // Flatten all tech into a single list
-  const allTech = skills.technical.flatMap(cat => cat.list);
+  const categories = ['All', 'Languages', 'Frontend', 'Backend & APIs', 'Databases & ORM', 'Tools & Platforms'];
+
+  const filteredTech = useMemo(() => {
+    if (activeCategory === 'All') {
+      return skills.technical.flatMap(cat => cat.list);
+    }
+    const catData = skills.technical.find(cat => cat.name === activeCategory);
+    return catData ? catData.list : [];
+  }, [activeCategory]);
 
   const coreStack = [
     'React + Redux Toolkit',
@@ -29,12 +38,37 @@ const Skills = () => {
     >
       <div className="grid md:grid-cols-2 gap-8">
         {/* Tech Icons */}
-        <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'}`}>
-          <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-6 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
+        <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20]/50 border-white/5' : 'bg-white/50 border-slate-100 shadow-sm'}`}>
+          <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
             Technologies
           </p>
-          <div className="grid grid-cols-4 sm:grid-cols-5 gap-5">
-            {allTech.map((item, i) => (
+
+          {/* Category tabs */}
+          <div className="flex flex-wrap items-center gap-1.5 mb-6">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={`px-3 py-1.5 rounded-full text-[10px] font-semibold tracking-wider uppercase transition-all duration-200 border cursor-pointer ${activeCategory === cat
+                  ? 'bg-accent border-accent text-white'
+                  : isDark
+                    ? 'border-white/10 text-slate-400 hover:text-white hover:border-white/20'
+                    : 'border-slate-200 text-slate-500 hover:text-slate-900 hover:border-slate-300'
+                  }`}
+              >
+                {cat.replace(' & APIs', '').replace(' & ORM', '').replace(' & Platforms', '')}
+              </button>
+            ))}
+          </div>
+
+          <motion.div
+            key={activeCategory}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            className="grid grid-cols-4 sm:grid-cols-5 gap-5"
+          >
+            {filteredTech.map((item, i) => (
               <motion.div
                 key={item.name}
                 initial={{ opacity: 0, y: 10 }}
@@ -57,12 +91,12 @@ const Skills = () => {
                 </span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Core Stack + Soft Skills */}
         <div className="flex flex-col gap-6">
-          <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'}`}>
+          <div className={`rounded-2xl border p-7 ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white/50 border-slate-100 shadow-sm'}`}>
             <p className={`text-xs font-semibold tracking-[0.12em] uppercase mb-5 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>
               Core Stack
             </p>

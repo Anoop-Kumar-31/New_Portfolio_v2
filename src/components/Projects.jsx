@@ -12,7 +12,7 @@ const Projects = () => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [galleryConfig, setGalleryConfig] = useState({ images: [], title: '' });
 
-  const categories = ['★ Featured', 'All'];
+  const categories = ['★ Featured', 'All', 'Full-Stack', 'Frontend'];
 
   const processedProjects = useMemo(() => {
     if (activeCategory === '★ Featured') return projects.filter(p => p.isFeatured);

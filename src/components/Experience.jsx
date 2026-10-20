@@ -27,8 +27,8 @@ const Experience = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${isDark
-                ? "bg-[#191C20] border-white/5 hover:border-white/10"
-                : "bg-white border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md"
+                ? "bg-[#191C20]/50 border-white/5 hover:border-white/10"
+                : "bg-white/50 border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md"
                 }`}
             >
               {/* Header */}

@@ -16,9 +16,8 @@ const Education = () => {
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`rounded-2xl border p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center ${
-          isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'
-        }`}
+        className={`rounded-2xl border p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center ${isDark ? 'bg-[#191C20] border-white/5' : 'bg-white border-slate-100 shadow-sm'
+          }`}
       >
         {/* Logo */}
         <div className="w-16 h-16 rounded-2xl overflow-hidden border border-slate-100 bg-white flex items-center justify-center shrink-0">
@@ -37,9 +36,8 @@ const Education = () => {
         </div>
 
         {/* CGPA */}
-        <div className={`flex flex-col items-center px-6 py-4 rounded-2xl border shrink-0 ${
-          isDark ? 'border-white/5 bg-white/5' : 'border-slate-100 bg-slate-50'
-        }`}>
+        <div className={`flex flex-col items-center px-6 py-4 rounded-2xl border shrink-0 ${isDark ? 'border-white/5 bg-white/5' : 'border-slate-100 bg-slate-50'
+          }`}>
           <span className={`text-3xl font-bold tabular-nums ${isDark ? 'text-white' : 'text-slate-900'}`}>
             {education.cgpa}
           </span>
