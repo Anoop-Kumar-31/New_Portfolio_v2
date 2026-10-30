@@ -12,6 +12,8 @@ import { trackVisitor } from './utils/visitorTracker';
 import { projects } from './data';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
+import Hero from "./components/Hero";
+
 function preloadImages(images) {
   images.forEach((src) => {
     const img = new Image();
@@ -73,9 +75,10 @@ function AppContent() {
       <div className="relative z-10">
         <Header />
 
-        <main className="max-w-6xl mx-auto px-6 pt-8">
-          <Experience />
+        <main className="mx-auto max-w-6xl px-6 pt-8">
+          <Hero />
           <Projects />
+          <Experience />
           <Skills />
           <Education />
           <Contact />
